@@ -2,6 +2,12 @@
 
 Entries are listed in reverse chronological order.
 
+## 4.0.1
+* `Serde` is optional.
+* Adds new backends for `curve25519-dalek`: `u32_backend`, `u64_backend`,
+  and `avx2_backend`(default on `std`).
+* Replace `clear_on_drop` by `zeroize`.
+
 ## 4.0.0
 
 * Update to `rand_core` `0.6`.  This requires a major version bump but the API
