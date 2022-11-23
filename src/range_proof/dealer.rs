@@ -6,8 +6,6 @@
 
 use core::iter;
 
-extern crate alloc;
-
 use alloc::vec::Vec;
 
 use curve25519_dalek::ristretto::RistrettoPoint;

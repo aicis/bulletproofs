@@ -1,12 +1,8 @@
 #![allow(non_snake_case)]
 #![cfg_attr(feature = "docs", doc(include = "../../docs/range-proof-protocol.md"))]
 
-extern crate alloc;
 #[cfg(feature = "std")]
-extern crate rand;
-
-#[cfg(feature = "std")]
-use self::rand::thread_rng;
+use rand::{thread_rng, Rng};
 use alloc::vec::Vec;
 
 use core::iter;
@@ -648,7 +644,6 @@ mod tests {
 
         // Prover's scope
         let (proof_bytes, value_commitments) = {
-            use self::rand::Rng;
             let mut rng = rand::thread_rng();
 
             // 0. Create witness data
@@ -740,7 +735,6 @@ mod tests {
         let pc_gens = PedersenGens::default();
         let bp_gens = BulletproofGens::new(n, m);
 
-        use self::rand::Rng;
         let mut rng = rand::thread_rng();
         let mut transcript = Transcript::new(b"AggregatedRangeProofTest");
 
@@ -813,7 +807,6 @@ mod tests {
         let pc_gens = PedersenGens::default();
         let bp_gens = BulletproofGens::new(n, m);
 
-        use self::rand::Rng;
         let mut rng = rand::thread_rng();
         let mut transcript = Transcript::new(b"AggregatedRangeProofTest");
 
